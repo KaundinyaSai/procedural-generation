@@ -41,7 +41,7 @@ public class TerrainGenrater : MonoBehaviour
 
         for(int index = 0, z = 0; z <= height; z++) {
             for(int x = 0; x <= width; x++) {
-                float y = Mathf.PerlinNoise(x * scale, z * scale) * heightMultiplier;
+                float y = HeightMapGenrater.GenrateHeightMap(x * scale, z * scale, 6, 0.5f, 2.0f);
                 
                 vertices[index] = new Vector3(x , y, z);
                 index++;
